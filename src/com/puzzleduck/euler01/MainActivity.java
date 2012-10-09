@@ -85,8 +85,8 @@ public class MainActivity extends Activity implements View.OnClickListener
 					sumTotal += i;
 				}else
 				{
-					strikesStart.add(new Integer(startTag));
-					strikesEnd.add(new Integer(unmarkedText.length()));
+					strikesStart.add(Integer.valueOf(startTag));
+					strikesEnd.add(Integer.valueOf(unmarkedText.length()));
 				}
 				separator = ", ";
 			}
