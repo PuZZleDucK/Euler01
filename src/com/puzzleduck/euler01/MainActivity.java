@@ -34,25 +34,20 @@ public class MainActivity extends Activity implements View.OnClickListener
 		a = (TextView) findViewById(R.id.a);
 		b = (TextView) findViewById(R.id.b);
 		
-		
 		incA.setOnClickListener(this);
 		incB.setOnClickListener(this);
 		decA.setOnClickListener(this);
 		decB.setOnClickListener(this);
 		compute.setOnClickListener(this);
-		
+
+		count = (EditText)findViewById(R.id.count);
+		resultView = (TextView) findViewById(R.id.result);
 		mainText = (EditText) findViewById(R.id.displaytext);
-		mainText.setHorizontalScrollBarEnabled(true);
-		mainText.setHorizontallyScrolling(true);
+		mainText.setHorizontallyScrolling(true);//that's all it needed
 		mainText.setTextSize(11);
 		mainText.setTextColor(Color.WHITE);
-		mainText.setText("code text");
-		mainText.setHorizontalScrollBarEnabled(true);
-		mainText.append(Html.fromHtml("code <b>append</b>\n"));
-		resultView = (TextView) findViewById(R.id.result);
-		count = (EditText)findViewById(R.id.count);
 		
-	}
+	}//create
 
 	
 	
