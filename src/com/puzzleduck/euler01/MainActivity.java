@@ -125,12 +125,14 @@ public class MainActivity extends Activity implements View.OnClickListener
 			{
 				//	htmlText.setSpan(new  StrikethroughSpan(), strikesStart.get(index), strikesEnd.get(index) , 0 );
 				htmlText.setSpan(new  SubscriptSpan(), strikesStart.get(index), strikesEnd.get(index) , 0);
+				htmlText.setSpan(new  SubscriptSpan(), strikesStart.get(index), strikesEnd.get(index) , 0);
 			}
 
 			htmlText.setSpan(new  UnderlineSpan(), 0, htmlText.length() , 0);
 			mainText.setText(htmlText);
 			resultView.setText("\n\nGrand total: " + sumTotal + "\n\n");
 		
+			
 		}//compute
 		
 		
