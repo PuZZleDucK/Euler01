@@ -149,14 +149,14 @@ public class MainActivity extends Activity implements View.OnClickListener
 		if(p1.getId() == R.id.deca)
 		{
 			aValue -= 1;
-			if(aValue == 0){aValue=1;}
+			if(aValue == 1){aValue=2;}
 			a.setText(""+aValue);
 		}
 		
 		if(p1.getId() == R.id.decb)
 		{
 			bValue -= 1;
-			if(bValue == 0){bValue=1;}
+			if(bValue == 1){bValue=2;}
 			b.setText(""+bValue);
 		}
 		
