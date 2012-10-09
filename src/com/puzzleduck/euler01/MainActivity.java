@@ -49,8 +49,6 @@ public class MainActivity extends Activity implements View.OnClickListener
 		
 	}//create
 
-	
-	
 
 	public void onClick(View p1)
 	{
@@ -69,8 +67,18 @@ public class MainActivity extends Activity implements View.OnClickListener
 				if(i%20 == 1)
 				{
 					unmarkedText.append("\n");
+					separator = "";
 				}	
 				unmarkedText.append(separator);
+
+				if(i < 10)
+				{
+					unmarkedText.append("0");
+				}
+				if(i < 100)
+				{
+					unmarkedText.append("0");
+				}
 				int startTag = unmarkedText.length();
 
 				unmarkedText.append(i);
@@ -90,7 +98,6 @@ public class MainActivity extends Activity implements View.OnClickListener
 			htmlText.setSpan(new  StrikethroughSpan(), strikesStart.get(0) , strikesEnd.get(0) , 0);
 			for (int index = 0; index < strikesStart.size(); index++)
 			{
-				htmlText.setSpan(new  SubscriptSpan(), strikesStart.get(index), strikesEnd.get(index) , 0);
 				htmlText.setSpan(new  ForegroundColorSpan(Color.RED), strikesStart.get(index), strikesEnd.get(index) , 0);
 			}
 

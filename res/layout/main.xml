@@ -130,6 +130,7 @@
 		
 
 		<EditText
+		    android:typeface="monospace"
 			android:text="[[ The numbers from 1 to the selected number will appear here when compute is activated. ]]" 
 			android:background="@null"
 			android:editable="false"
