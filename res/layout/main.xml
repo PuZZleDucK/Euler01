@@ -75,11 +75,23 @@
 				android:layout_height="fill_parent" />
 
 		</LinearLayout>
-
+
 		<LinearLayout
 		    android:layout_width="wrap_content"
 		    android:layout_height="wrap_content"
-		    android:layout_gravity="center"
+		    android:layout_gravity="center|top"
+		    android:orientation="vertical" >
+		
+		<LinearLayout
+		    android:layout_width="fill_parent"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center|top"
+		    android:orientation="horizontal" >
+		
+		<LinearLayout
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:layout_gravity="center_horizontal"
 		    android:orientation="vertical" >
 
 			<TextView 
@@ -100,28 +112,43 @@
 		
 		<Button
 		    android:id="@+id/compute"
-		    android:layout_width="match_parent"
+		    android:layout_width="fill_parent"
 		    android:layout_height="wrap_content"
 		    android:layout_gravity="center_vertical"
 		    android:text="Compute" />
 		
-		<!-- No nps until droid 3
-	<NumberPicker
-		android:id="@+id/numbera"  
-		android:focusable="false"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-	
-	<NumberPicker
-		android:id="@+id/numberb"  
-		android:focusable="false"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
-		-->
+		</LinearLayout>
+		
+		<LinearLayout
+		    android:layout_width="wrap_content"
+		    android:layout_height="wrap_content"
+		    android:orientation="horizontal" >
+		
+		<ImageButton
+		    android:id="@+id/zoomin"
+		    android:layout_width="wrap_content"
+		    android:layout_height="50dip"
+		    android:layout_gravity="center_vertical"
+		    android:scaleType="fitCenter"
+		    android:src="@android:drawable/btn_plus" />
+
+		<ImageButton
+		    android:id="@+id/zoomout"
+		    android:layout_width="wrap_content"
+		    android:layout_height="50dip"
+		    android:layout_gravity="center_vertical"
+		    android:scaleType="fitCenter"
+		    android:src="@android:drawable/btn_minus" />
+		
+		</LinearLayout>
 		
 	</LinearLayout>
 	
 
+		
+		</LinearLayout>
+		
+	
 
 	<LinearLayout 
 		android:layout_width="fill_parent"
@@ -151,6 +178,8 @@
 
 
 
+	
+	
 	</LinearLayout>
 
 
