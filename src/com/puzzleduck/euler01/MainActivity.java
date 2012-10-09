@@ -96,7 +96,7 @@ public class MainActivity extends Activity implements View.OnClickListener
 			for (int index = 0; index < strikesStart.size(); index++)
 			{
 				htmlText.setSpan(new  SubscriptSpan(), strikesStart.get(index), strikesEnd.get(index) , 0);
-				htmlText.setSpan(new  SubscriptSpan(), strikesStart.get(index), strikesEnd.get(index) , 0);
+				htmlText.setSpan(new  ForegroundColorSpan(Color.RED), strikesStart.get(index), strikesEnd.get(index) , 0);
 			}
 
 			htmlText.setSpan(new  UnderlineSpan(), 0, htmlText.length() , 0);
