@@ -18,6 +18,7 @@ public class MainActivity extends Activity implements View.OnClickListener
 	private static TextView b;
 	private int aValue = 3;
 	private int bValue = 5;
+	private int textSize = 6;
 	
     /** Called when the activity is first created. */
     @Override
@@ -33,18 +34,22 @@ public class MainActivity extends Activity implements View.OnClickListener
 		Button compute = (Button)findViewById(R.id.compute);
 		a = (TextView) findViewById(R.id.a);
 		b = (TextView) findViewById(R.id.b);
-		
+		ImageButton zoomIn = (ImageButton)findViewById(R.id.zoomin);
+		ImageButton zoomOut = (ImageButton)findViewById(R.id.zoomout);
+		 
 		incA.setOnClickListener(this);
 		incB.setOnClickListener(this);
 		decA.setOnClickListener(this);
 		decB.setOnClickListener(this);
 		compute.setOnClickListener(this);
+		zoomIn.setOnClickListener(this);
+		zoomOut.setOnClickListener(this);
 
 		count = (EditText)findViewById(R.id.count);
 		resultView = (TextView) findViewById(R.id.result);
 		mainText = (EditText) findViewById(R.id.displaytext);
 		mainText.setHorizontallyScrolling(true);//that's all it needed
-		mainText.setTextSize(11);
+		mainText.setTextSize(6);
 		mainText.setTextColor(Color.WHITE);
 		
 	}//create
@@ -73,11 +78,11 @@ public class MainActivity extends Activity implements View.OnClickListener
 
 				if(i < 10)
 				{
-					unmarkedText.append("0");
+					unmarkedText.append(" ");
 				}
 				if(i < 100)
 				{
-					unmarkedText.append("0");
+					unmarkedText.append(" ");
 				}
 				int startTag = unmarkedText.length();
 
@@ -95,7 +100,6 @@ public class MainActivity extends Activity implements View.OnClickListener
 			}
 
 			SpannableString htmlText = new SpannableString(unmarkedText);
-			htmlText.setSpan(new  StrikethroughSpan(), strikesStart.get(0) , strikesEnd.get(0) , 0);
 			for (int index = 0; index < strikesStart.size(); index++)
 			{
 				htmlText.setSpan(new  ForegroundColorSpan(Color.RED), strikesStart.get(index), strikesEnd.get(index) , 0);
@@ -127,12 +131,27 @@ public class MainActivity extends Activity implements View.OnClickListener
 			if(aValue == 1){aValue=2;}
 			a.setText(""+aValue);
 		}
-		
+
 		if(p1.getId() == R.id.decb)
 		{
 			bValue -= 1;
 			if(bValue == 1){bValue=2;}
 			b.setText(""+bValue);
+		}
+
+		if(p1.getId() == R.id.zoomin)
+		{
+			textSize += 1;
+			if(textSize > 20){textSize=20;}
+			mainText.setTextSize(textSize);
+			mainText.refreshDrawableState();
+		}
+		if(p1.getId() == R.id.zoomout)
+		{
+			textSize -= 1;
+			if(textSize < 1){textSize=1;}
+			mainText.setTextSize(textSize);
+			mainText.refreshDrawableState();
 		}
 		
 		
