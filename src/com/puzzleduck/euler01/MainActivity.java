@@ -41,30 +41,16 @@ public class MainActivity extends Activity implements View.OnClickListener
 		decB.setOnClickListener(this);
 		compute.setOnClickListener(this);
 		
-	//	ScrollView mainScroll = (ScrollView) findViewById(R.id.displayscroll);
-	//	mainScroll.setHorizontalScrollBarEnabled(true);
-	//	mainScroll.setMinimumWidth(500);
 		mainText = (EditText) findViewById(R.id.displaytext);
-	//	mainText.setMinimumHeight(500);
-	//	mainText.setWidth(500);
 		mainText.setHorizontalScrollBarEnabled(true);
 		mainText.setHorizontallyScrolling(true);
 		mainText.setTextSize(11);
 		mainText.setTextColor(Color.WHITE);
 		mainText.setText("code text");
 		mainText.setHorizontalScrollBarEnabled(true);
-	//	mainText.setLayoutParams( ViewGroup.LayoutParams.FILL_PARENT );
 		mainText.append(Html.fromHtml("code <b>append</b>\n"));
-	//	numbera numberb result
-
-	//	NumberPicker numberA = (NumberPicker) findViewById(R.id.numbera);
-	//	NumberPicker numberB = (NumberPicker) findViewById(R.id.numberb);
 		resultView = (TextView) findViewById(R.id.result);
 		count = (EditText)findViewById(R.id.count);
-	//	numberA.setValue(5);
-	//    numberA.setBottom(1);
-	//	numberB.setValue(3);
-	//	numberA.setOnClickListener(this);
 		
 	}
 
@@ -73,37 +59,25 @@ public class MainActivity extends Activity implements View.OnClickListener
 
 	public void onClick(View p1)
 	{
-		// TODOing: Implement this method
-		
 		if(p1.getId() == R.id.compute)
 		{
-		//	mainText.setText("compute");
-		// remove old spans
-		
             int countLimit = Integer.parseInt(count.getText().toString());
 			String separator = "";
 
-		//	ArrayList<SpannableString> strikes = new ArrayList<SpannableString>();
 			ArrayList<Integer> strikesStart = new ArrayList<Integer>();
 			ArrayList<Integer> strikesEnd = new ArrayList<Integer>();
 			int sumTotal = 0;
 			StringBuffer unmarkedText = new StringBuffer();
 			for( int i = 1; i < countLimit; i++)
 			{		
-				//SpannableString htmlText = new SpannableString("");
-				//String tag = "";
-				//String endtag = "";
-				//	int startTag = mainText.length();
 
 				if(i%20 == 1)
 				{
-					//mainText.append("\n");
 					unmarkedText.append("\n");
 				}	
 				unmarkedText.append(separator);
 				int startTag = unmarkedText.length();
 
-				//mainText.append(Html.fromHtml(separator + i ));
 				unmarkedText.append(i);
 
 				if(factorOf(i, aValue) || factorOf(i, bValue))
@@ -111,8 +85,6 @@ public class MainActivity extends Activity implements View.OnClickListener
 					sumTotal += i;
 				}else
 				{
-					//	htmlText.setSpan(new  StrikethroughSpan(), 0 , htmlText.length() , 0 );
-					//new StrikethroughSpan(), startTag , htmlText.length() , 0);
 					strikesStart.add(new Integer(startTag));
 					strikesEnd.add(new Integer(unmarkedText.length()));
 				}
@@ -123,7 +95,6 @@ public class MainActivity extends Activity implements View.OnClickListener
 			htmlText.setSpan(new  StrikethroughSpan(), strikesStart.get(0) , strikesEnd.get(0) , 0);
 			for (int index = 0; index < strikesStart.size(); index++)
 			{
-				//	htmlText.setSpan(new  StrikethroughSpan(), strikesStart.get(index), strikesEnd.get(index) , 0 );
 				htmlText.setSpan(new  SubscriptSpan(), strikesStart.get(index), strikesEnd.get(index) , 0);
 				htmlText.setSpan(new  SubscriptSpan(), strikesStart.get(index), strikesEnd.get(index) , 0);
 			}
